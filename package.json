@@ -1,0 +1,17 @@
+{
+  "name": "splitsheet-server",
+  "version": "1.0.0",
+  "description": "Backend for Splitsheet — handles Roblox OAuth login and asset uploads",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cookie-parser": "^1.4.6",
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
