@@ -394,7 +394,11 @@ app.post('/upload', async (req, res) => {
 
     if (!uploadRes.ok) {
       console.error('Upload failed:', uploadJson);
-      return res.status(502).json({ error: 'Roblox rejected the upload.', details: uploadJson });
+      const robloxMessage = uploadJson && (uploadJson.message || uploadJson.error);
+      return res.status(502).json({
+        error: robloxMessage ? `Roblox rejected the upload: ${robloxMessage}` : 'Roblox rejected the upload.',
+        details: uploadJson,
+      });
     }
 
     // Uploads are async — Roblox returns an operation to poll.
