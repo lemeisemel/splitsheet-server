@@ -372,7 +372,7 @@ app.post('/upload', async (req, res) => {
 
     const imageBuffer = Buffer.from(imageBase64, 'base64');
     const requestPayload = {
-      assetType: 'Decal',
+      assetType: 'Image',
       displayName: (filename || 'livery-tile').replace(/\.[^/.]+$/, '').slice(0, 50),
       description: 'Uploaded via Splitsheet',
       creationContext: {
